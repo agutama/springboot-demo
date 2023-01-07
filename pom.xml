@@ -44,4 +44,17 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>github</id>
+			<name>snapshotRepository</name>
+			<url>https://maven.pkg.github.com/agutama/springboot-demo/snapshot/</url>
+		</snapshotRepository>
+		<repository>
+			<id>github</id>
+			<name>releaseRepository</name>
+			<url>https://maven.pkg.github.com/agutama/springboot-demo</url>
+		</repository>
+	</distributionManagement>
+
 </project>
