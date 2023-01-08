@@ -1,0 +1,10 @@
+.git
+target/maven-archiver
+target/classes
+target/maven-status
+target/generated-sources
+target/node
+test
+src
+docs
+WebContent
