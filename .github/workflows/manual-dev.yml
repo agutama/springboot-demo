@@ -53,7 +53,7 @@ jobs:
         tags: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ env.GITHUB_SHA_SHORT }}
 
 
-  ssh:
+  deploy:
     runs-on: 'ubuntu-latest'
     permissions:
       contents: 'read'
