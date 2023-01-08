@@ -14,7 +14,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: springboot-demo
+  IMAGE_NAME: springboot-demo-dev
   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
   
 jobs:
