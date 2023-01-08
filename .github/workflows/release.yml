@@ -10,11 +10,11 @@ name: springboot-demo-build
 
 on:
   push:
-    branches: [ "dev" ]
+    tags: [ v* ]
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: springboot-demo-dev
+  IMAGE_NAME: springboot-demo
   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
   
 jobs:
