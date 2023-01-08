@@ -37,8 +37,8 @@ jobs:
     - name: Maven set version
       run: mvn versions:set -DnewVersion=${{ env.GITHUB_SHA_SHORT }}-SNAPSHOT
 
-    - name: Publish package
-      run: mvn --batch-mode deploy -Dmaven.test.skip=true
+    - name: Compile source code (skip test)
+      run: mvn clean package -Dmaven.test.skip=true
 
     - uses: docker/login-action@v2
       with:
