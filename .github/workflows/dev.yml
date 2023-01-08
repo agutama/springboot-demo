@@ -10,7 +10,7 @@ name: springboot-demo-build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev" ]
 
 jobs:
   build:
