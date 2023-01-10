@@ -34,7 +34,7 @@ jobs:
       run: echo "GITHUB_SHA_SHORT=$(echo ${GITHUB_SHA::7})" >> $GITHUB_ENV
       
     - name: Test secret
-      run: echo echo "TEST=$(echo ${TEST_SECRET})"
+      run: echo echo "TEST=$(echo ${secrets.TEST_SECRET})"
 
     - name: Maven set version
       run: mvn versions:set -DnewVersion=${{ env.GITHUB_SHA_SHORT }}-SNAPSHOT
