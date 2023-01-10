@@ -15,6 +15,7 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: springboot-demo-dev
   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  TEST: ${{ secrets.TEST_SECRET }}
   
 jobs:
   build:
@@ -32,13 +33,6 @@ jobs:
 
     - name: Get version
       run: echo "GITHUB_SHA_SHORT=$(echo ${GITHUB_SHA::7})" >> $GITHUB_ENV
-      
-    - name: Get secret Test
-      env:
-        TEST: ${{ secrets.TEST_SECRET }}
-      run: |
-        echo Test get secret
-        echo $TEST
 
     - name: Maven set version
       run: mvn versions:set -DnewVersion=${{ env.GITHUB_SHA_SHORT }}-SNAPSHOT
@@ -81,4 +75,4 @@ jobs:
         instance_name: 'instance-1'
         zone: 'asia-southeast2-a'
         ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
-        command: 'echo Hello world > test.txt'
+        command: 'echo $TEST > test.txt'
