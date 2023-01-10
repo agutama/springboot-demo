@@ -15,6 +15,7 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: springboot-demo-dev
   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  TEST: ${{ secrets.TEST_SECRET }}
   
 jobs:
   build:
@@ -77,4 +78,4 @@ jobs:
         instance_name: 'instance-1'
         zone: 'asia-southeast2-a'
         ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
-        command: 'echo Hello world > test.txt'
+        command: 'echo "${{ env.TEST }}" > test.txt && cat test.txt'
